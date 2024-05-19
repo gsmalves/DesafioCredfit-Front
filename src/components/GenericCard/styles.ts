@@ -1,4 +1,3 @@
-import { Slider } from 'antd';
 import styled from 'styled-components';
 
 export const CardContainer = styled.div`
@@ -12,6 +11,8 @@ export const CardContainer = styled.div`
   flex-direction: column;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+
 `;
 
 export const CardHeader = styled.div`
@@ -98,53 +99,6 @@ export const AdditionalDiv = styled.div`
   align-items: center;
 `;
 
-export const ValueContainer = styled.div`
-  width: 188px; // Alterado para 188px
-  height: 48px; // Alterado para 48px
-  padding: 8px 16px; // Alterado para 8px 16px
-  gap: 8px; // Alterado para 8px
-  border-radius: 16px; // Alterado para 16px
-  opacity: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #EAEDED;
-  margin-bottom: 16px; /* Adiciona uma margem inferior de 16px */
-`;
-export const ValueText = styled.span`
-  color:  #004F56;
-  font-size: 20px;
-
-`;
-export const SliderContainer = styled.div`
-
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  /* Adicionando uma altura mínima para garantir que a linha do Slider seja visível */
-  min-height: 50px; 
-`;
-
-export const StyledSlider = styled(Slider)`
-  width: 100%;
-  min-height: 50px;
-  position: relative;
-`;
-
-export const StyledHandle = styled.div`
-  width: 24px;
-  height: 24px;
-  top: 104px;
-  left: 31.88px;
-  gap: 0px;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  background: #057D88;
-  position: absolute;
-  cursor: pointer;
-`;
 
 
 

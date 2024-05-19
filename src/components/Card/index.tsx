@@ -1,24 +1,13 @@
+// index.tsx
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import arrowChevron from '../../assets/ArrowChevron.svg';
 
-import betina from '../../assets/betina-sorrindo_2x 1.svg';
+import GenericCard from '../../components/GenericCard'; // Importando o GenericCard
+
 import {
   AdditionalDiv,
-  BackIcon,
-  CardBody,
-  CardContainer,
-  CardHeader,
-  Footer,
-  Image,
-  InnerDiv,
-  OuterDiv,
-  SimulateLoanButton,
   SliderContainer,
   StyledSlider,
-  SubTitle,
-  Text,
-  Title,
   ValueContainer,
   ValueText
 } from './styles';
@@ -35,45 +24,41 @@ const Card: React.FC = () => {
     setSliderValue(value);
   };
 
+
+  const handlePrimaryButtonClick = () => {
+    console.log('Primary button clicked');
+  };
+
+  const handleSecondaryButtonClick = () => {
+    console.log('Secondary button clicked');
+  };
+
   return (
-    <CardContainer>
-      <CardHeader>
-        <BackIcon src={arrowChevron} alt="Back" onClick={handleBackClick} />
-        <div>
-          <SubTitle>Home / Crédito Consignado</SubTitle>
-          <Title>Crédito Consignado</Title>
-        </div>
-      </CardHeader>
-      <CardBody>
-        <SimulateLoanButton>Simular Empréstimo</SimulateLoanButton>
-        <OuterDiv>
-          <InnerDiv>
-            <Image src={betina} alt="Betina Sorrindo" />
-            <Text>Você possui para Crédito Consignado pela empresa X. Faça uma simulação. Indique quanto você precisa:</Text>
-          </InnerDiv>
-        </OuterDiv>
-        <AdditionalDiv>
-          <ValueContainer>
-             <ValueText>R$ {sliderValue}</ValueText>
-          </ValueContainer>
-          <SliderContainer>
-            <StyledSlider
-              min={0}
-              max={50000}
-              defaultValue={0}
-
-              
-              onChange={handleSliderChange}
-            />
-          </SliderContainer>
-        </AdditionalDiv>
-      </CardBody>
-      <Footer>
-
-
-
-      </Footer>
-    </CardContainer>
+    <GenericCard
+      title="Crédito Consignado"
+      text="Você possui para Crédito Consignado pela empresa X. Faça uma simulação. Indique quanto você precisa:"
+      titleBody="Simular empréstimo"
+      button1Text="Voltar"
+      onButton1Click={handlePrimaryButtonClick}
+      button1Color="#057D88" // Adicionando a cor do primeiro botão
+      button2Text="Solicitar Empréstimo"
+      onButton2Click={handleSecondaryButtonClick}
+      button2Color="#fffff" // Adicionando a cor do segundo botão
+    >
+      <AdditionalDiv>
+        <ValueContainer>
+          <ValueText>R$ {sliderValue}</ValueText>
+        </ValueContainer>
+        <SliderContainer>
+          <StyledSlider
+            min={0}
+            max={50000}
+            defaultValue={0}
+            onChange={handleSliderChange}
+          />
+        </SliderContainer>
+      </AdditionalDiv>
+    </GenericCard>
   );
 };
 
