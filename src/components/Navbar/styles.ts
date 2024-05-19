@@ -30,6 +30,12 @@ export const UserIcon = styled.img`
   margin-right: 8px;
 `;
 
+export const ArrowChevron = styled.img`
+  width: 16px;
+  height: 164px;
+  margin-right: 8px;
+`;
+
 export const UserName = styled.span`
   font-size: 16px;
   color: #fff;

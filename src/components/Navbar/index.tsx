@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import arrowChevron from '../../assets/ArrowChevron2.svg';
 import brandIcon from '../../assets/Brand.svg'; // Importando a marca do site
 import userIcon from '../../assets/user-icon.svg';
-import { Arrow, BrandIcon, Dropdown, DropdownItem, NavBarContainer, UserContainer, UserIcon, UserName } from './styles';
+import { ArrowChevron, BrandIcon, Dropdown, DropdownItem, NavBarContainer, UserContainer, UserIcon, UserName } from './styles';
 
 const NavBar: React.FC = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -16,7 +17,7 @@ const NavBar: React.FC = () => {
       <UserContainer onClick={handleToggleDropdown}>
         <UserIcon src={userIcon} alt="User Icon" />
         <UserName>John Doe</UserName>
-        <Arrow>&#9660;</Arrow> {/* Unicode for down arrow */}
+        <ArrowChevron src={arrowChevron} alt="Arrow Chevron 2" /> {/* Marca do site */}
       </UserContainer>
       {isDropdownOpen && (
         <Dropdown>
