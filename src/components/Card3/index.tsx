@@ -13,6 +13,12 @@ const Card3: React.FC = () => {
     history.push('/card2'); // Redireciona para a rota "/card2" ao clicar em "Voltar"
   };
 
+  // Função para lidar com o clique no botão "Solicitar empréstimo"
+  const handleLoanRequestClick = () => {
+    history.push('/card4'); // Redireciona para a rota "/card4" ao clicar em "Solicitar empréstimo"
+  };
+  
+
   return (
     <GenericCard
       title="Crédito Consignado"
@@ -22,7 +28,7 @@ const Card3: React.FC = () => {
       onButton1Click={handleBackButtonClick} // Chama a função handleBackButtonClick ao clicar em "Voltar"
       button1Color="#057D88"
       button2Text="Solicitar empréstimo"
-      onButton2Click={() => console.log('Ação 2 clicada')}
+      onButton2Click={handleLoanRequestClick}
       button2Color="#fff"
     >
       <AdditionalDiv>

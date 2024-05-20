@@ -48,16 +48,17 @@ const Text = styled.div`
 
 // Estilizando o texto dentro do botão
 const ButtonText = styled.div`
-  font-family: Montserrat;
-  font-size: 24px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+  font-size: 22px;
   font-weight: 600;
   line-height: 31.92px;
   text-align: left;
   color: #057d88; /* Cor do texto */
   width: 117px;
-  height: 32px;
-  gap: 0px;
+
 `;
+
+
 
 interface ButtonInstallmentsProps {
   text: string;

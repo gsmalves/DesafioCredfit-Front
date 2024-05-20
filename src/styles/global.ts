@@ -1,6 +1,4 @@
-
 import { createGlobalStyle } from 'styled-components';
-
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -48,5 +46,27 @@ export const GlobalStyle = createGlobalStyle`
   [disabled] {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+
+  /* Estilizando a barra de rolagem */
+  ::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+    height: 15px; /* Altura da barra de rolagem */
+  }
+
+  /* Estilizando a trilha da barra de rolagem */
+  ::-webkit-scrollbar-track {
+    background: #D6DBDB; /* Cor de fundo da trilha da barra de rolagem */
+  }
+
+  /* Estilizando o controle da barra de rolagem */
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do controle da barra de rolagem */
+    border-radius: 16px 0px 0px 0px; /* Borda arredondada da barra de rolagem */
+  }
+
+  /* Estilizando o controle da barra de rolagem ao passar o mouse */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do controle da barra de rolagem ao passar o mouse */
   }
 `;
