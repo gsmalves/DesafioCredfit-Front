@@ -1,12 +1,15 @@
-import { Switch } from 'react-router-dom';
-
-import Loan from '../pages/Loan/index';
-
-import { RouteAuth } from './RouteAuth';
+// src/routes/AppRoutes.tsx
+import { Route, Switch } from 'react-router-dom';
+import Card2Page from '../pages/Card2'; // Importando a nova página
+import Card3Page from '../pages/Card3';
+import LoanPage from '../pages/Loan'; // Renomeie a Loan para LoanPage
 
 export function AppRoutes() {
-  return <Switch>
-    <RouteAuth path="/" component={Loan} />
-</Switch>
+  return (
+    <Switch>
+      <Route exact path="/" component={LoanPage} />
+      <Route path="/card2" component={Card2Page} />
+      <Route path="/card3" component={Card3Page}/>
+    </Switch>
+  );
 }
-

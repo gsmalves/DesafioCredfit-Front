@@ -1,36 +1,24 @@
-// index.tsx
-import React, { useState } from 'react';
+// src/components/Card/index.tsx
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-
-import GenericCard from '../../components/GenericCard'; // Importando o GenericCard
-
-import {
-  AdditionalDiv,
-  SliderContainer,
-  StyledSlider,
-  ValueContainer,
-  ValueText
-} from './styles';
+import { useSliderValue } from '../../components/Contexts/SliderValueContext';
+import GenericCard from '../../components/GenericCard';
+import { AdditionalDiv, SliderContainer, StyledSlider, ValueContainer, ValueText } from './styles';
 
 const Card: React.FC = () => {
   const history = useHistory();
-  const [sliderValue, setSliderValue] = useState<number>(0); // Valor inicial do slider
-
-  const handleBackClick = () => {
-    history.push('/');
-  };
+  const { sliderValue, setSliderValue } = useSliderValue();
 
   const handleSliderChange = (value: number) => {
     setSliderValue(value);
   };
 
-
   const handlePrimaryButtonClick = () => {
-    console.log('Primary button clicked');
+    history.push('/');
   };
 
   const handleSecondaryButtonClick = () => {
-    console.log('Secondary button clicked');
+    history.push('/card2');
   };
 
   return (
@@ -40,10 +28,10 @@ const Card: React.FC = () => {
       titleBody="Simular empréstimo"
       button1Text="Voltar"
       onButton1Click={handlePrimaryButtonClick}
-      button1Color="#057D88" // Adicionando a cor do primeiro botão
+      button1Color="#057D88"
       button2Text="Solicitar Empréstimo"
       onButton2Click={handleSecondaryButtonClick}
-      button2Color="#fffff" // Adicionando a cor do segundo botão
+      button2Color="#fffff"
     >
       <AdditionalDiv>
         <ValueContainer>

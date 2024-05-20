@@ -85,15 +85,15 @@ const GenericCard: React.FC<GenericCardProps> = ({
         </OuterDiv>
         {children}
         <AdditionalDiv>
-          {/* Conteúdo adicional, se necessário */}
+
         </AdditionalDiv>
       </CardBody>
       <Footer>
         <ButtonWrapper>
-          <CustomButton onClick={handleButton1Click} buttonType="Secondary" style={{ backgroundColor: isButton1Clicked ? '#D6DBDB' : undefined }} color={isButton1Clicked ? '#535F5F' : button1Color}>
+          <CustomButton onClick={handleButton1Click} buttonType="Secondary" color={isButton1Clicked ? '#535F5F' : button1Color}>
             {button1Text}
           </CustomButton>
-          <CustomButton onClick={handleButton2Click} buttonType="Primary" style={{ backgroundColor: isButton2Clicked ? '#D6DBDB' : undefined }} color={isButton2Clicked ? '#535F5F' : button2Color}>
+          <CustomButton onClick={handleButton2Click} buttonType="Primary" color={isButton2Clicked ? '#535F5F' : button2Color}>
             {button2Text}
           </CustomButton>
         </ButtonWrapper>

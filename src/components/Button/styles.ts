@@ -4,6 +4,7 @@ import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 interface ButtonContainerProps {
   buttonType: 'Primary' | 'Secondary';
   color?: string;
+  style?: React.CSSProperties; 
 }
 
 const typeStyles: Record<string, FlattenSimpleInterpolation> = {

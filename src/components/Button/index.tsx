@@ -12,7 +12,7 @@ interface CustomButtonProps {
 const CustomButton: React.FC<CustomButtonProps> = ({ onClick, children, buttonType = 'Primary', color }) => {
   return (
     <ButtonContainer onClick={onClick} buttonType={buttonType} color={color}>
-      <ButtonText>{children}</ButtonText>
+      <ButtonText color={color}>{children}</ButtonText>
     </ButtonContainer>
   );
 };
