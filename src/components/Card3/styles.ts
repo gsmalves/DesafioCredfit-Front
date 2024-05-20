@@ -13,23 +13,20 @@ export const NewDiv = styled.div`
 
 export const InnerDiv = styled.div`
   display: flex;
-  align-items: flex-start; /* Align items at the start (top) */
-  justify-content: center;
+  align-items: center; /* Alinhe os elementos no centro verticalmente */
+  justify-content: space-between; /* Adicione espaço entre os elementos */
   width: 228px;
   height: 64px;
 `;
 
 export const InnerContent = styled.div`
-  width: 324px;
-  height: 24px;
   display: flex;
-  align-items: flex-start; /* Ensure content aligns at the start (top) */
+  flex-direction: column;
+  width: 100%;
   gap: 8px;
-  padding-top: 8px; /* Adjust this value as needed to move content up */
 `;
 
 export const Title = styled.div`
-  width: 292px;
   height: 24px;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -37,5 +34,25 @@ export const Title = styled.div`
   line-height: 24px;
   text-align: left;
   color: #2A3535;
-  margin-top: 0; /* Ensure no extra margin */
+  margin: 0; /* Remove margin para evitar espaçamento extra */
+`;
+
+export const SubDiv = styled.div`
+  display: flex;
+  align-items: center; /* Alinhe os elementos no centro verticalmente */
+  height: 32px;
+  padding: 8px 0; /* Remova o padding lateral */
+  gap: 8px;
+`;
+
+export const SubDivText = styled.div`
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color:  #535F5F;
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  overflow: hidden; /* Oculta qualquer texto que ultrapasse o contêiner */
+  text-overflow: ellipsis; /* Adiciona "..." quando o texto é cortado */
 `;
