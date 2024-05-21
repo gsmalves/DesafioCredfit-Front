@@ -1,4 +1,5 @@
 import React, { ReactNode, createContext, useContext, useState } from 'react';
+
 export interface Employee {  
   id: number;
   fullName: string;
@@ -10,6 +11,8 @@ interface SliderValueContextProps {
   setSliderValue: (value: number) => void;
   clickedButtonInfo: string;
   setClickedButtonInfo: (info: string) => void;
+  clickedButtonIndex: number;
+  setClickedButtonIndex: (index: number) => void;
   selectedEmployee: Employee | null;
   setSelectedEmployee: (employee: Employee) => void;
 }
@@ -19,6 +22,7 @@ const SliderValueContext = createContext<SliderValueContextProps | undefined>(un
 export const SliderValueProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [sliderValue, setSliderValue] = useState<number>(0);
   const [clickedButtonInfo, setClickedButtonInfo] = useState<string>('');
+  const [clickedButtonIndex, setClickedButtonIndex] = useState<number>(0);
   const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null);
 
   return (
@@ -28,6 +32,8 @@ export const SliderValueProvider: React.FC<{ children: ReactNode }> = ({ childre
         setSliderValue,
         clickedButtonInfo,
         setClickedButtonInfo,
+        clickedButtonIndex,
+        setClickedButtonIndex,
         selectedEmployee,
         setSelectedEmployee,
       }}

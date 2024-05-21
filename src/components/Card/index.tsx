@@ -42,12 +42,12 @@ const Card: React.FC = () => {
   return (
     <GenericCard
       title="Crédito Consignado"
-      text={`Você possui para Crédito Consignado pela empresa ${companyName}. Faça uma simulação. Indique quanto você precisa:`}
+      text={`Você possui saldo para Crédito Consignado pela empresa ${companyName}. Faça uma simulação. Indique quanto você precisa:`}
       titleBody="Simular empréstimo"
       button1Text="Voltar"
       onButton1Click={handlePrimaryButtonClick}
       button1Color="#057D88"
-      button2Text="Solicitar Empréstimo"
+      button2Text="Simular Empréstimo"
       onButton2Click={handleSecondaryButtonClick}
       button2Color="#ffffff"
     >

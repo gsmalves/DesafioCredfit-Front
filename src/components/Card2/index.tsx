@@ -7,7 +7,7 @@ import { AdditionalDiv, Installments, Paragraph5, ValueContainer, ValueText } fr
 
 const Card2: React.FC = () => {
   const history = useHistory();
-  const { sliderValue, setClickedButtonInfo } = useSliderValue();
+  const { sliderValue, setClickedButtonInfo, setClickedButtonIndex } = useSliderValue();
   const [installments, setInstallments] = useState<number[]>([0, 0, 0, 0]);
   const [activeButton, setActiveButton] = useState<number | null>(null); // Estado para controlar o botão ativo
 
@@ -49,7 +49,7 @@ const Card2: React.FC = () => {
     >
       <AdditionalDiv>
         <ValueContainer>
-          <ValueText>R$ {sliderValue}</ValueText>
+          <ValueText>R$ {sliderValue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</ValueText>
         </ValueContainer>
         <Paragraph5>Divididas em:</Paragraph5>
         <Installments>
@@ -60,8 +60,8 @@ const Card2: React.FC = () => {
               buttonText={value.toFixed(2).replace('.', ',')}
               active={activeButton === index} 
               onClick={() => {
-
                 setClickedButtonInfo(`${index + 1}x de ${value.toFixed(2).replace('.', ',')}`);
+                setClickedButtonIndex(index + 1); // Armazena o número de parcelas
                 setActiveButton(index); 
               }}
             />
