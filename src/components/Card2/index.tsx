@@ -58,11 +58,11 @@ const Card2: React.FC = () => {
               key={index}
               text={`${index + 1}x de`}
               buttonText={value.toFixed(2).replace('.', ',')}
-              active={activeButton === index} // Definindo se o botão está ativo com base no estado
+              active={activeButton === index} 
               onClick={() => {
-                console.log('Botão', index + 1, 'clicado');
+
                 setClickedButtonInfo(`${index + 1}x de ${value.toFixed(2).replace('.', ',')}`);
-                setActiveButton(index); // Atualizando o estado do botão ativo
+                setActiveButton(index); 
               }}
             />
           ))}

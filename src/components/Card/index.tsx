@@ -1,5 +1,5 @@
-// src/components/Card/index.tsx
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import GenericCard from '../../components/GenericCard';
 import { useSliderValue } from '../Contexts/SliderValueContext';
@@ -7,7 +7,25 @@ import { AdditionalDiv, SliderContainer, StyledSlider, ValueContainer, ValueText
 
 const Card: React.FC = () => {
   const history = useHistory();
-  const { sliderValue, setSliderValue } = useSliderValue();
+  const { sliderValue, setSliderValue, selectedEmployee } = useSliderValue();
+  const [companyName, setCompanyName] = useState<string>('');
+
+  useEffect(() => {
+    const fetchCompanyName = async (employeeId: number) => {
+      try {
+        const response = await axios.get(`http://localhost:3000/employees/${employeeId}`);
+        setCompanyName(response.data.companyId.businessName); // Acessa companyId primeiro e depois businessName
+      } catch (error) {
+        console.error('Error fetching company name:', error);
+        setCompanyName('Empresa X'); 
+      }
+    };
+    
+    if (selectedEmployee) {
+      fetchCompanyName(selectedEmployee.id); //SelectedEmployee.id para obter o ID do funcionário selecionado
+    }
+  }, [selectedEmployee]);
+  
 
   const handleSliderChange = (value: number) => {
     setSliderValue(value);
@@ -24,14 +42,14 @@ const Card: React.FC = () => {
   return (
     <GenericCard
       title="Crédito Consignado"
-      text="Você possui para Crédito Consignado pela empresa X. Faça uma simulação. Indique quanto você precisa:"
+      text={`Você possui para Crédito Consignado pela empresa ${companyName}. Faça uma simulação. Indique quanto você precisa:`}
       titleBody="Simular empréstimo"
       button1Text="Voltar"
       onButton1Click={handlePrimaryButtonClick}
       button1Color="#057D88"
       button2Text="Solicitar Empréstimo"
       onButton2Click={handleSecondaryButtonClick}
-      button2Color="#fffff"
+      button2Color="#ffffff"
     >
       <AdditionalDiv>
         <ValueContainer>

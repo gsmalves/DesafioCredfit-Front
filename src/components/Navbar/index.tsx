@@ -38,7 +38,7 @@ const NavBar: React.FC = () => {
       <BrandIcon src={brandIcon} alt="Brand Icon" />
       <UserContainer onClick={handleToggleDropdown}>
         <UserIcon src={userIcon} alt="User Icon" />
-        <UserName>{selectedEmployee ? selectedEmployee.fullName : 'Select Employee'}</UserName>
+        <UserName>{selectedEmployee ? selectedEmployee.fullName : 'Selecione o funcionário'}</UserName>
         <ArrowChevron src={arrowChevron} alt="Arrow Chevron 2" isDropdownOpen={isDropdownOpen} />
       </UserContainer>
       {isDropdownOpen && (
