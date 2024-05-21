@@ -4,8 +4,8 @@ import arrowChevron3 from '../../assets/ArrowChevron3.svg';
 import closeButtonSvg from '../../assets/Button-close.svg';
 import groupImage from '../../assets/Group.svg';
 import checkImage from '../../assets/check-icon.svg';
-import { useSliderValue } from '../../components/Contexts/SliderValueContext';
 import GenericCard from '../../components/GenericCard';
+import { useSliderValue } from '../Contexts/SliderValueContext';
 import {
   AdditionalDiv,
   ArrowDiv,

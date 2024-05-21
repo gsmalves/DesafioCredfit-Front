@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'; // Importe o useHistory para realizar o redirecionamento
-import { useSliderValue } from '../../components/Contexts/SliderValueContext'; // Importe o hook useSliderValue
 import GenericCard from '../../components/GenericCard';
+import { useSliderValue } from '../Contexts/SliderValueContext'; // Importe o hook useSliderValue
 import { AdditionalDiv, InnerContent, InnerDiv, NewDiv, SubDiv, SubDivText, Title } from './styles';
 
 const Card3: React.FC = () => {

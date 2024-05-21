@@ -30,34 +30,42 @@ export const UserIcon = styled.img`
   margin-right: 8px;
 `;
 
-export const ArrowChevron = styled.img`
-  width: 16px;
-  height: 164px;
-  margin-right: 8px;
-`;
-
 export const UserName = styled.span`
   font-size: 16px;
   color: #fff;
   margin-right: 4px;
 `;
 
+interface ArrowChevronProps {
+  isDropdownOpen: boolean;
+}
+
+export const ArrowChevron = styled.img<ArrowChevronProps>`
+  height: 20px;
+  transition: transform 0.3s ease;
+  transform: ${({ isDropdownOpen }) => (isDropdownOpen ? 'rotate(180deg)' : 'rotate(0)')};
+`;
+
 export const Dropdown = styled.div`
   position: absolute;
-  top: 48px; /* Adjust this based on the NavBar height */
-  right: 72px; /* Align with the right padding */
-  background: #fff;
-  border: 1px solid #ccc;
+  top: 60px;
+  right: 20px;
+  background-color: white;
+  color: black;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  max-height: 200px; /* Altura máxima da lista */
+  overflow-y: auto; /* Ativa o scroll vertical */
   z-index: 1000;
 `;
 
 export const DropdownItem = styled.div`
-  padding: 8px 16px;
+  padding: 10px 20px;
   cursor: pointer;
+
   &:hover {
-    background: #f0f0f0;
+    background-color: #f1f1f1;
   }
 `;
 

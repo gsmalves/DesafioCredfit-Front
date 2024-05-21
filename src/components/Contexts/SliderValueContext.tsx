@@ -1,20 +1,37 @@
 import React, { ReactNode, createContext, useContext, useState } from 'react';
+export interface Employee {  
+  id: number;
+  fullName: string;
+  companyId: number;
+}
 
 interface SliderValueContextProps {
   sliderValue: number;
   setSliderValue: (value: number) => void;
-  clickedButtonInfo: string; // Adiciona a informação do botão clicado
-  setClickedButtonInfo: (info: string) => void; // Adiciona a função para definir a informação do botão clicado
+  clickedButtonInfo: string;
+  setClickedButtonInfo: (info: string) => void;
+  selectedEmployee: Employee | null;
+  setSelectedEmployee: (employee: Employee) => void;
 }
 
 const SliderValueContext = createContext<SliderValueContextProps | undefined>(undefined);
 
 export const SliderValueProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [sliderValue, setSliderValue] = useState<number>(0);
-  const [clickedButtonInfo, setClickedButtonInfo] = useState<string>(''); // Inicializa com uma string vazia
+  const [clickedButtonInfo, setClickedButtonInfo] = useState<string>('');
+  const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null);
 
   return (
-    <SliderValueContext.Provider value={{ sliderValue, setSliderValue, clickedButtonInfo, setClickedButtonInfo }}>
+    <SliderValueContext.Provider
+      value={{
+        sliderValue,
+        setSliderValue,
+        clickedButtonInfo,
+        setClickedButtonInfo,
+        selectedEmployee,
+        setSelectedEmployee,
+      }}
+    >
       {children}
     </SliderValueContext.Provider>
   );

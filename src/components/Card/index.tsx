@@ -1,8 +1,8 @@
 // src/components/Card/index.tsx
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSliderValue } from '../../components/Contexts/SliderValueContext';
 import GenericCard from '../../components/GenericCard';
+import { useSliderValue } from '../Contexts/SliderValueContext';
 import { AdditionalDiv, SliderContainer, StyledSlider, ValueContainer, ValueText } from './styles';
 
 const Card: React.FC = () => {
