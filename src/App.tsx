@@ -6,6 +6,7 @@ import { GlobalStyle } from "./styles/global";
 export function App() {
   return (
     <BrowserRouter>
+
         <SliderValueProvider>
           <AppRoutes />
         </SliderValueProvider>

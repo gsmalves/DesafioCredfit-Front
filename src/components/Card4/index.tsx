@@ -84,6 +84,8 @@ const Card4: React.FC = () => {
     if (selectedEmployee) {
       axios.get(`http://localhost:3000/loans/employee/${selectedEmployee.id}`)
         .then(response => {
+          setLoans(response.data);
+
           let failedLoanCount = 0;
           let successfulLoanCount = 0;
   
@@ -259,5 +261,4 @@ const Card4: React.FC = () => {
   </GenericCard>
 );
 };
-
 export default Card4;
