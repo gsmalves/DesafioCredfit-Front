@@ -68,7 +68,7 @@ export const InnerContent = styled.div`
   display: flex;
   justify-content: space-around; /* Alterado para espaço entre os itens */
   align-items: center; /* Alinhando os itens verticalmente */
-  width: 195px;
+  width: 240px;
   height: 40px;
   padding: 8px 0px 0px 0px;
   gap: 0px;
@@ -77,14 +77,14 @@ export const InnerContent = styled.div`
 `;
 
 export const Paragraph = styled.p`
-  width: 139px;
+  width: 150px;
   height: 24px;
   gap: 0px;
   font-family: Open Sans;
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
-  text-align: center;
+  margin-left: -35px;
   color: #01354e;
 
 `;
